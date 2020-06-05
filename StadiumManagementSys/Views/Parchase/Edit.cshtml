@@ -1,0 +1,94 @@
+﻿@model StadiumManagementSys.Models.Account
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form asp-action="Index" asp-controller="Parchase" method="post" enctype="multipart/form-data" role="form">
+            <div class="modal-header">
+                <h4 class="modal-title">Parchase Details</h4>
+
+                <a asp-action="Games" asp-controller="GameSchedule" class="close" data-dismiss="modal" aria-hidden="true">x</a>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label asp-for="TransactionNumber"> TransactionNumber</label>
+                    <input asp-for="TransactionNumber" class="form-control" placeholder="Enter Transaction Number" name="TransactionNumber" required="required">
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="TransactionDate">TransactionDate</label>
+                    <input asp-for="TransactionDate" class="form-control" placeholder="Enter Transaction Date" name="TransactionDate" required="required">
+
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="ClientName">Client Name</label>
+                    <input asp-for="ClientName" class="form-control" placeholder="Enter Client Name" name="ClientName" required="required">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Phone">Phone</label>
+                    <input asp-for="Phone" class="form-control" placeholder="Enter Phone Number" name="Phone" required="required">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" class="form-control" placeholder="Enter Phone Number" name="Email" required="required">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="TransactionType">Transaction Type</label>
+                    <input asp-for="TransactionType" class="form-control" placeholder="Enter Transaction Type" name="TransactionType" required="required">
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Categories">Seat Categories</label>
+
+                    <select class="form-control" asp-for="Categories">
+                        <option class="hidden" selected="" disabled="">Please select one</option>
+                        <option id="Categories" value="25000">VIP</option>
+                        <option id="Categories" value="2500">General</option>
+
+                    </select>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label asp-for="Quantity">Quantity</label>
+                    <select class="form-control" asp-for="Quantity" id="myNumber">
+                        <option class="hidden" selected="" disabled="">Please select one</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="4">5</option>
+                    </select>
+                </div>
+
+                <button onclick="myFunction()">Click to See Total</button><h2 id="demo"> Total =</h2>
+                <div class="form-group">
+
+                    <label asp-for="Amount">Total</label>
+                    <input asp-for="Amount" class="form-control" placeholder="Enter Amount" name="Amount" required="required">
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Add">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function myFunction() {
+        var c = document.getElementById("myNumber").value;
+        var Categories = document.getElementById("Categories").value;
+
+        document.getElementById("demo").innerHTML = Categories * c;
+    }
+</script>
+

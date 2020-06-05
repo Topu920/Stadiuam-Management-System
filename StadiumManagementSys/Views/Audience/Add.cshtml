@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["title"] = "Add Audience";
+}
+
+@model StadiumManagementSys.Models.Audience
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form asp-action="Add" asp-controller="Audience" method="post" role="form">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Audience</h4>
+                @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>*@
+                <a asp-action="List" asp-controller="Audience" class="close" data-dismiss="modal" aria-hidden="true">x</a>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label asp-for="Date">Date</label>
+                    <input asp-for="Date" class="form-control" placeholder="Enter Date" name="Date" required="required">
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter Audience Name" name="Name" required="required">
+
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Type">Type</label>
+                    <input asp-for="Type" class="form-control" placeholder="Enter Audience Email" name="Type" required="required">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Phone">Phone</label>
+                    <input asp-for="Phone" class="form-control" placeholder="Enter Audience Phone" name="Phone" required="required">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="SeatNo">Seat Number</label>
+                    <input asp-for="SeatNo" class="form-control" placeholder="Enter Seat Number" name="SeatNo" required="required">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Gameno">Game No</label>
+                    <input asp-for="Gameno" class="form-control" placeholder="Enter Game No" name="gameno" required="required">
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Add">
+            </div>
+        </form>
+    </div>
+</div>
